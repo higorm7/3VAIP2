@@ -1,8 +1,8 @@
-module com.example.va3ip2 {
+module src.va3ip {
     requires javafx.controls;
     requires javafx.fxml;
 
 
-    opens com.example.va3ip2 to javafx.fxml;
-    exports com.example.va3ip2;
+    opens gui to javafx.fxml;
+    exports gui;
 }
