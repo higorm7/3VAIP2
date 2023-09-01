@@ -4,23 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2e48b10-8c3c-49ad-a11d-226a3cd07395" name="Changes" comment="init">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/control/ControladorPessoa.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/control/TesteControladorPessoa.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/control/models/Pessoa.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/control/models/Presente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/data/IRepositorioPessoa.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/data/RepositorioPessoa.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exceptions/ApelidoJaCadastradoException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gui/a.java" afterDir="false" />
+    <list default="true" id="e2e48b10-8c3c-49ad-a11d-226a3cd07395" name="Changes" comment="&quot;Adicionada classe pessoa, adicionado repositório e controlador de pessoas. Cadastro funcionando adequadamente.&quot;">
+      <change afterPath="$PROJECT_DIR$/src/main/java/control/ControladorGrupo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/control/models/Grupo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/data/IRepositorioGrupo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/data/RepositorioGrupo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/exceptions/NomeDeGrupoJaCadastradoException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/va3ip2/HelloApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/va3ip2/HelloController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/va3ip2/hello-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/control/TesteControladorPessoa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/TesteControladores.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +62,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1693604541434</updated>
-      <workItem from="1693604542454" duration="3172000" />
+      <workItem from="1693604542454" duration="4901000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -81,7 +72,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693604578311</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="&quot;Adicionada classe pessoa, adicionado repositório e controlador de pessoas. Cadastro funcionando adequadamente.&quot;">
+      <option name="closed" value="true" />
+      <created>1693607799434</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1693607799434</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -89,6 +88,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
-    <option name="LAST_COMMIT_MESSAGE" value="init" />
+    <MESSAGE value="&quot;Adicionada classe pessoa, adicionado repositório e controlador de pessoas. Cadastro funcionando adequadamente.&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;Adicionada classe pessoa, adicionado repositório e controlador de pessoas. Cadastro funcionando adequadamente.&quot;" />
   </component>
 </project>

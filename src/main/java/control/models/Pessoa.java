@@ -1,5 +1,6 @@
 package control.models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Pessoa {
@@ -13,6 +14,7 @@ public class Pessoa {
         this.nome = nome;
         this.apelido = apelido;
         this.senha = senha;
+        this.presentesDesejados = new ArrayList<>(0);
     }
 
     public String getNome() {
