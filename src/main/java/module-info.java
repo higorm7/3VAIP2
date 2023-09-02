@@ -5,4 +5,7 @@ module src.va3ip {
 
     opens gui to javafx.fxml;
     exports gui;
+
+    opens view to javafx.fxml;
+    exports view;
 }

@@ -4,14 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2e48b10-8c3c-49ad-a11d-226a3cd07395" name="Changes" comment="&quot;Adicionada classe pessoa, adicionado repositório e controlador de pessoas. Cadastro funcionando adequadamente.&quot;">
-      <change afterPath="$PROJECT_DIR$/src/main/java/control/ControladorGrupo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/control/models/Grupo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/data/IRepositorioGrupo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/data/RepositorioGrupo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exceptions/NomeDeGrupoJaCadastradoException.java" afterDir="false" />
+    <list default="true" id="e2e48b10-8c3c-49ad-a11d-226a3cd07395" name="Changes" comment="&quot;Adicionada classe grupo. Adicionados repositório e controlador de grupos. Corrigidos erros de inicialização dos atributos de pessoa e grupo. Adicionada exceção de nome de grupo já cadastrado.&quot;">
+      <change afterPath="$PROJECT_DIR$/src/main/java/gui/ControladorTelaPrincipal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/ScreenManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/telaPrincipal.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/control/TesteControladorPessoa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/TesteControladores.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,15 +23,16 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2UoSf2njojPErEvsjOjsxRo7Ia4" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -51,6 +52,9 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -62,7 +66,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1693604541434</updated>
-      <workItem from="1693604542454" duration="4901000" />
+      <workItem from="1693604542454" duration="5079000" />
+      <workItem from="1693655649592" duration="4528000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -80,7 +85,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693607799434</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="&quot;Adicionada classe grupo. Adicionados repositório e controlador de grupos. Corrigidos erros de inicialização dos atributos de pessoa e grupo. Adicionada exceção de nome de grupo já cadastrado.&quot;">
+      <option name="closed" value="true" />
+      <created>1693609592376</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1693609592376</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -89,6 +102,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
     <MESSAGE value="&quot;Adicionada classe pessoa, adicionado repositório e controlador de pessoas. Cadastro funcionando adequadamente.&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;Adicionada classe pessoa, adicionado repositório e controlador de pessoas. Cadastro funcionando adequadamente.&quot;" />
+    <MESSAGE value="&quot;Adicionada classe grupo. Adicionados repositório e controlador de grupos. Corrigidos erros de inicialização dos atributos de pessoa e grupo. Adicionada exceção de nome de grupo já cadastrado.&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;Adicionada classe grupo. Adicionados repositório e controlador de grupos. Corrigidos erros de inicialização dos atributos de pessoa e grupo. Adicionada exceção de nome de grupo já cadastrado.&quot;" />
   </component>
 </project>
