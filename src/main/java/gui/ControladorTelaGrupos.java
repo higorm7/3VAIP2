@@ -2,7 +2,6 @@ package gui;
 
 import control.SistemaAmigoSecreto;
 import control.models.Grupo;
-import control.models.Pessoa;
 import exceptions.NomeDeGrupoJaCadastradoException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -44,7 +43,9 @@ public class ControladorTelaGrupos {
 
     @FXML
     void buttonPresentesOnClick(ActionEvent event) {
-
+        this.clearFields();
+        ScreenManager.getInstance().changeScreen(ScreenManager.getInstance().getTelaPresentesScene(),
+                "Presentes");
     }
 
     @FXML
@@ -52,14 +53,18 @@ public class ControladorTelaGrupos {
         if (camposEstaoVazios()) {
             showErrorAlert("Erro: campos vazios", "Os campos necessários não podem estar vazios",
                     "Tente novamente");
+            tfNome.requestFocus();
         } else {
             try {
                 Grupo grupo = new Grupo(tfNome.getText(), dpData.getValue());
                 SistemaAmigoSecreto.getInstance().cadastrarGrupo(grupo);
                 showInfoAlert("Grupo cadastrado", "Operação bem-sucedida",
                         "O nome do grupo é: " + tfNome.getText());
+                clearFields();
             } catch (NomeDeGrupoJaCadastradoException e) {
                 showErrorAlert("Erro: nome de grupo já existe", e.getMessage(), "Tente outro nome");
+                this.tfNome.setText("");
+                this.tfNome.requestFocus();
             }
         }
     }

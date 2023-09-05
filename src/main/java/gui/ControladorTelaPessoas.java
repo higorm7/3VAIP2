@@ -37,26 +37,33 @@ public class ControladorTelaPessoas {
 
     @FXML
     void buttonPresentesOnClick(ActionEvent event) {
-
+        this.clearFields();
+        ScreenManager.getInstance().changeScreen(ScreenManager.getInstance().getTelaPresentesScene(),
+                "Presentes");
     }
 
     @FXML
     void buttonSorteioOnClick(ActionEvent event) {
 
     }
+
     @FXML
     void buttonSalvarOnClick(ActionEvent event) {
         if (camposEstaoVazios()) {
             showErrorAlert("Erro: campos vazios", "Preencha os campos corretamente para continuar",
                     "Tente novamente");
+            this.tfNome.requestFocus();
         } else {
             try {
                 Pessoa pessoa = new Pessoa(tfNome.getText(), tfApelido.getText(), pfSenha.getText());
                 SistemaAmigoSecreto.getInstance().cadastrarPessoa(pessoa);
                 showInfoAlert("Operação bem-sucedida", "A pessoa foi cadastrada",
                         "O apelido usado é: " + tfApelido.getText());
+                clearFields();
             } catch (ApelidoJaCadastradoException e) {
                 showErrorAlert("Erro: apelido já está cadastrado", e.getMessage(), "Tente outro apelido.");
+                this.tfApelido.setText("");
+                this.tfApelido.requestFocus();
             }
         }
     }

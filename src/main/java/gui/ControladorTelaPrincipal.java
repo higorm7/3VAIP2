@@ -20,7 +20,8 @@ public class ControladorTelaPrincipal {
 
     @FXML
     void buttonPresentesOnClick(ActionEvent event) {
-
+        ScreenManager.getInstance().changeScreen(ScreenManager.getInstance().getTelaPresentesScene(),
+                "Presentes");
     }
 
     @FXML
