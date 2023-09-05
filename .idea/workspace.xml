@@ -4,20 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2e48b10-8c3c-49ad-a11d-226a3cd07395" name="Changes" comment="Adicionada tela de grupos. Cadastro funcionando normalmente.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/control/controllers/ControladorPresente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/data/IRepositorioPresente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/data/RepositorioPresente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exceptions/PresenteJaCadastradoException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gui/ControladorTelaPresentes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/telaPresentes.fxml" afterDir="false" />
+    <list default="true" id="e2e48b10-8c3c-49ad-a11d-226a3cd07395" name="Changes" comment="Adicionada a tela de presentes. Cadastro funcionando adequadamente. Incluída exceção caso já exista um presente com a mesma descrição.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/control/SistemaAmigoSecreto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/SistemaAmigoSecreto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/control/models/Presente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/models/Presente.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gui/ControladorTelaGrupos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/ControladorTelaGrupos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gui/ControladorTelaPessoas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/ControladorTelaPessoas.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gui/ControladorTelaPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/ControladorTelaPrincipal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/ScreenManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/ScreenManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/telaGrupos.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/telaGrupos.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +71,7 @@
       <updated>1693604541434</updated>
       <workItem from="1693604542454" duration="5079000" />
       <workItem from="1693655649592" duration="4569000" />
-      <workItem from="1693932433774" duration="8102000" />
+      <workItem from="1693932433774" duration="11502000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -129,7 +121,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693937710180</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Adicionada a tela de presentes. Cadastro funcionando adequadamente. Incluída exceção caso já exista um presente com a mesma descrição.">
+      <option name="closed" value="true" />
+      <created>1693947091536</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1693947091536</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,6 +142,7 @@
     <MESSAGE value="Iniciadas classes e telas da gui." />
     <MESSAGE value="Adicionada tela de pessoas. Cadastro funcionando adequadamente." />
     <MESSAGE value="Adicionada tela de grupos. Cadastro funcionando normalmente." />
-    <option name="LAST_COMMIT_MESSAGE" value="Adicionada tela de grupos. Cadastro funcionando normalmente." />
+    <MESSAGE value="Adicionada a tela de presentes. Cadastro funcionando adequadamente. Incluída exceção caso já exista um presente com a mesma descrição." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adicionada a tela de presentes. Cadastro funcionando adequadamente. Incluída exceção caso já exista um presente com a mesma descrição." />
   </component>
 </project>

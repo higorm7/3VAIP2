@@ -5,12 +5,13 @@ import control.models.Pessoa;
 import exceptions.ApelidoJaCadastradoException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import view.ScreenManager;
 
 public class ControladorTelaPessoas {
+
+    @FXML
+    private ChoiceBox<?> cbPessoa;
 
     @FXML
     private PasswordField pfSenha;
@@ -22,8 +23,22 @@ public class ControladorTelaPessoas {
     private TextField tfNome;
 
     @FXML
+    private TableColumn<?, ?> tvColPresentesPessoa;
+
+    @FXML
+    private TableColumn<?, ?> tvColTodosPresentes;
+
+    @FXML
+    private TableView<?> tvPresentesPessoa;
+
+    @FXML
+    private TableView<?> tvTodosPresentes;
+
+
+    @FXML
     void buttonGruposOnClick(ActionEvent event) {
         clearFields();
+        ScreenManager.getInstance().getControladorTelaGrupos().atualizarApresentacao();
         ScreenManager.getInstance().changeScreen(ScreenManager.getInstance().getTelaGruposScene(),
                 "Grupos");
     }

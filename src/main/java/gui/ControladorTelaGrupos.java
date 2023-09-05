@@ -2,17 +2,25 @@ package gui;
 
 import control.SistemaAmigoSecreto;
 import control.models.Grupo;
+import control.models.Pessoa;
 import exceptions.NomeDeGrupoJaCadastradoException;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import view.ScreenManager;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ControladorTelaGrupos {
+
+    @FXML
+    private ChoiceBox<String> cbGrupo;
 
     @FXML
     private DatePicker dpData;
@@ -21,7 +29,19 @@ public class ControladorTelaGrupos {
     private TextField tfNome;
 
     @FXML
-    void buttonCancelarOnClick(ActionEvent event) {
+    private TableColumn<Pessoa, String> tvColPessoasGrupo;
+
+    @FXML
+    private TableColumn<Pessoa, String> tvColTodasPessoas;
+
+    @FXML
+    private TableView<Pessoa> tvPessoasGrupo;
+
+    @FXML
+    private TableView<Pessoa> tvTodasPessoas;
+
+    @FXML
+    void buttonCancelarCadastroOnClick(ActionEvent event) {
         clearFields();
         ScreenManager.getInstance().changeScreen(ScreenManager.getInstance().getTelaPrincipalScene(),
                 "Amigos secretos");
@@ -49,7 +69,7 @@ public class ControladorTelaGrupos {
     }
 
     @FXML
-    void buttonSalvarOnClick(ActionEvent event) {
+    void buttonSalvarCadastroOnClick(ActionEvent event) {
         if (camposEstaoVazios()) {
             showErrorAlert("Erro: campos vazios", "Os campos necessários não podem estar vazios",
                     "Tente novamente");
@@ -61,6 +81,7 @@ public class ControladorTelaGrupos {
                 showInfoAlert("Grupo cadastrado", "Operação bem-sucedida",
                         "O nome do grupo é: " + tfNome.getText());
                 clearFields();
+                atualizarApresentacao();
             } catch (NomeDeGrupoJaCadastradoException e) {
                 showErrorAlert("Erro: nome de grupo já existe", e.getMessage(), "Tente outro nome");
                 this.tfNome.setText("");
@@ -71,6 +92,20 @@ public class ControladorTelaGrupos {
 
     @FXML
     void buttonSorteioOnClick(ActionEvent event) {
+
+    }
+
+    @FXML
+    void buttonCancelarPessoasOnAction(ActionEvent event) {
+
+    }
+    @FXML
+    void buttonSalvarPessoasOnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void buttonPesquisarOnClick(ActionEvent event) {
 
     }
 
@@ -99,6 +134,34 @@ public class ControladorTelaGrupos {
     private void clearFields() {
         tfNome.setText("");
         dpData.setValue(null);
+    }
+
+    public void initialize() {
+        tvColTodasPessoas.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getApelido()));
+    }
+
+    private void configurarTv(List<Pessoa> pessoas, TableView<Pessoa> tableView) {
+        ObservableList<Pessoa> pessoaList = FXCollections.observableArrayList();
+        pessoaList.addAll(pessoas);
+        tableView.setItems(pessoaList);
+    }
+
+    public void atualizarApresentacao() {
+        limparItens();
+        configurarTv(SistemaAmigoSecreto.getInstance().obterPessoas(), this.tvTodasPessoas);
+    }
+
+    private void limparItens() {
+        cbGrupo.getItems().clear();
+
+        List<String> nomesGrupos = new ArrayList<>(0);
+        for (Grupo grupo : SistemaAmigoSecreto.getInstance().obterGrupos()) {
+            nomesGrupos.add(grupo.getNome());
+        }
+
+        cbGrupo.getItems().addAll(nomesGrupos);
+        tvTodasPessoas.getItems().clear();
+        tvPessoasGrupo.getItems().clear();
     }
 
 }
