@@ -1,5 +1,7 @@
 package control;
 
+import control.controllers.ControladorGrupo;
+import control.controllers.ControladorPessoa;
 import control.models.Grupo;
 import control.models.Pessoa;
 import exceptions.ApelidoJaCadastradoException;

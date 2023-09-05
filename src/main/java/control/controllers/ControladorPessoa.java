@@ -1,4 +1,4 @@
-package control;
+package control.controllers;
 
 import control.models.Pessoa;
 import data.IRepositorioPessoa;

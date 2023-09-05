@@ -4,14 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2e48b10-8c3c-49ad-a11d-226a3cd07395" name="Changes" comment="&quot;Adicionada classe grupo. Adicionados repositório e controlador de grupos. Corrigidos erros de inicialização dos atributos de pessoa e grupo. Adicionada exceção de nome de grupo já cadastrado.&quot;">
-      <change afterPath="$PROJECT_DIR$/src/main/java/gui/ControladorTelaPrincipal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/ScreenManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/telaPrincipal.fxml" afterDir="false" />
+    <list default="true" id="e2e48b10-8c3c-49ad-a11d-226a3cd07395" name="Changes" comment="Iniciadas classes e telas da gui.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/control/SistemaAmigoSecreto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/gui/ControladorTelaPessoas.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/telaPessoas.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/a.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/control/ControladorGrupo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/controllers/ControladorGrupo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/control/ControladorPessoa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/controllers/ControladorPessoa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/control/TesteControladores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/TesteControladores.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/ControladorTelaPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/ControladorTelaPrincipal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/ScreenManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/ScreenManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/telaPrincipal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/telaPrincipal.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +26,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -41,23 +45,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="control.controllers" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -67,7 +76,8 @@
       <option name="presentableId" value="Default" />
       <updated>1693604541434</updated>
       <workItem from="1693604542454" duration="5079000" />
-      <workItem from="1693655649592" duration="4528000" />
+      <workItem from="1693655649592" duration="4569000" />
+      <workItem from="1693932433774" duration="2936000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -93,7 +103,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693609592376</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Iniciadas classes e telas da gui.">
+      <option name="closed" value="true" />
+      <created>1693660209595</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1693660209595</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -103,6 +121,7 @@
     <MESSAGE value="init" />
     <MESSAGE value="&quot;Adicionada classe pessoa, adicionado repositório e controlador de pessoas. Cadastro funcionando adequadamente.&quot;" />
     <MESSAGE value="&quot;Adicionada classe grupo. Adicionados repositório e controlador de grupos. Corrigidos erros de inicialização dos atributos de pessoa e grupo. Adicionada exceção de nome de grupo já cadastrado.&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;Adicionada classe grupo. Adicionados repositório e controlador de grupos. Corrigidos erros de inicialização dos atributos de pessoa e grupo. Adicionada exceção de nome de grupo já cadastrado.&quot;" />
+    <MESSAGE value="Iniciadas classes e telas da gui." />
+    <option name="LAST_COMMIT_MESSAGE" value="Iniciadas classes e telas da gui." />
   </component>
 </project>

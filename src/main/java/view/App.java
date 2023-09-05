@@ -13,8 +13,7 @@ public class App extends Application {
         primaryStage.setResizable(false);
 
         ScreenManager.getInstance().setPrimaryStage(primaryStage);
-
-        primaryStage.show();
+        ScreenManager.getInstance().getPrimaryStage().show();
     }
 
     public static void main(String[] args) {

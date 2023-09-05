@@ -1,4 +1,4 @@
-package control;
+package control.controllers;
 
 import control.models.Grupo;
 import control.models.Pessoa;

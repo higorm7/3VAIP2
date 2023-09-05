@@ -2,17 +2,30 @@ package gui;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TabPane;
+import view.ScreenManager;
 
 public class ControladorTelaPrincipal {
 
     @FXML
-    public TabPane tab;
+    void buttonGruposOnClick(ActionEvent event) {
+
+    }
 
     @FXML
-    void buttonOnClick(ActionEvent event) {
-        this.tab.getTabs().add(new Tab("a"));
+    void buttonPessoasOnClick(ActionEvent event) {
+        ScreenManager.getInstance().changeScreen(ScreenManager.getInstance().getTelaPessoasScene(),
+                "Pessoas");
+    }
+
+    @FXML
+    void buttonPresentesOnClick(ActionEvent event) {
+
+    }
+
+    @FXML
+    void buttonSorteioOnClick(ActionEvent event) {
+
     }
 
 }
+

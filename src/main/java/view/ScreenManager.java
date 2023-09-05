@@ -1,5 +1,6 @@
 package view;
 
+import gui.ControladorTelaPessoas;
 import gui.ControladorTelaPrincipal;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -13,8 +14,12 @@ import java.util.Objects;
 public class ScreenManager {
 
     private Stage primaryStage;
+
     private Scene telaPrincipalScene;
     private ControladorTelaPrincipal controladorTelaPrincipal;
+
+    private Scene telaPessoasScene;
+    private ControladorTelaPessoas controladorTelaPessoas;
 
     private static ScreenManager instance;
 
@@ -38,6 +43,18 @@ public class ScreenManager {
         return controladorTelaPrincipal;
     }
 
+    public Scene getTelaPessoasScene() {
+        return telaPessoasScene;
+    }
+
+    public ControladorTelaPessoas getControladorTelaPessoas() {
+        return controladorTelaPessoas;
+    }
+
+    public Stage getPrimaryStage() {
+        return primaryStage;
+    }
+
     public void setPrimaryStage(Stage primaryStage) {
         this.primaryStage = primaryStage;
     }
@@ -50,6 +67,12 @@ public class ScreenManager {
                     .getResource("/telaPrincipal.fxml")).openStream());
             this.telaPrincipalScene = new Scene(telaPrincipalPane);
             this.controladorTelaPrincipal = fxmlLoader.getController();
+
+            fxmlLoader = new FXMLLoader();
+            AnchorPane telaPessoasPane = fxmlLoader.load(Objects.requireNonNull(getClass()
+                    .getResource("/telaPessoas.fxml")).openStream());
+            this.telaPessoasScene = new Scene(telaPessoasPane);
+            //this.controladorTelaPessoas = fxmlLoader.getController();
         } catch (IOException e) {
             e.printStackTrace();
         }
