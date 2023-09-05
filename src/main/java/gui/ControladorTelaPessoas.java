@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import view.ScreenManager;
 
 public class ControladorTelaPessoas {
 
@@ -22,12 +23,16 @@ public class ControladorTelaPessoas {
 
     @FXML
     void buttonGruposOnClick(ActionEvent event) {
-
+        clearFields();
+        ScreenManager.getInstance().changeScreen(ScreenManager.getInstance().getTelaGruposScene(),
+                "Grupos");
     }
 
     @FXML
     void buttonPessoasOnClick(ActionEvent event) {
-
+        this.clearFields();
+        ScreenManager.getInstance().changeScreen(ScreenManager.getInstance().getTelaPrincipalScene(),
+                "Amigos secretos");
     }
 
     @FXML
@@ -51,14 +56,20 @@ public class ControladorTelaPessoas {
                 showInfoAlert("Operação bem-sucedida", "A pessoa foi cadastrada",
                         "O apelido usado é: " + tfApelido.getText());
             } catch (ApelidoJaCadastradoException e) {
-                showErrorAlert("Erro: apelido já está cadastrado", "O apelido já está cadastrado",
-                        "Tente outro apelido.");
+                showErrorAlert("Erro: apelido já está cadastrado", e.getMessage(), "Tente outro apelido.");
             }
         }
     }
 
+    @FXML
+    void buttonCancelarOnClick(ActionEvent event) {
+        this.clearFields();
+        ScreenManager.getInstance().changeScreen(ScreenManager.getInstance().getTelaPrincipalScene(),
+                "Amigos secretos");
+    }
+
     private boolean camposEstaoVazios() {
-        return pfSenha.getText().isBlank() && tfApelido.getText().isBlank() && tfNome.getText().isBlank();
+        return pfSenha.getText().isBlank() || tfApelido.getText().isBlank() || tfNome.getText().isBlank();
     }
 
     private void showErrorAlert(String title, String header, String message) {

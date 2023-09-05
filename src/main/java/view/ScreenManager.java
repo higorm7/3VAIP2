@@ -1,5 +1,6 @@
 package view;
 
+import gui.ControladorTelaGrupos;
 import gui.ControladorTelaPessoas;
 import gui.ControladorTelaPrincipal;
 import javafx.fxml.FXMLLoader;
@@ -20,6 +21,9 @@ public class ScreenManager {
 
     private Scene telaPessoasScene;
     private ControladorTelaPessoas controladorTelaPessoas;
+
+    private Scene telaGruposScene;
+    private ControladorTelaGrupos controladorTelaGrupos;
 
     private static ScreenManager instance;
 
@@ -51,6 +55,14 @@ public class ScreenManager {
         return controladorTelaPessoas;
     }
 
+    public Scene getTelaGruposScene() {
+        return telaGruposScene;
+    }
+
+    public ControladorTelaGrupos getControladorTelaGrupos() {
+        return controladorTelaGrupos;
+    }
+
     public Stage getPrimaryStage() {
         return primaryStage;
     }
@@ -72,7 +84,13 @@ public class ScreenManager {
             AnchorPane telaPessoasPane = fxmlLoader.load(Objects.requireNonNull(getClass()
                     .getResource("/telaPessoas.fxml")).openStream());
             this.telaPessoasScene = new Scene(telaPessoasPane);
-            //this.controladorTelaPessoas = fxmlLoader.getController();
+            this.controladorTelaPessoas = fxmlLoader.getController();
+
+            fxmlLoader = new FXMLLoader();
+            AnchorPane telaGruposPane = fxmlLoader.load(Objects.requireNonNull(getClass()
+                    .getResource("/telaGrupos.fxml")).openStream());
+            this.telaGruposScene = new Scene(telaGruposPane);
+            this.controladorTelaGrupos = fxmlLoader.getController();
         } catch (IOException e) {
             e.printStackTrace();
         }

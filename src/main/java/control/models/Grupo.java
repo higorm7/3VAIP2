@@ -34,4 +34,15 @@ public class Grupo {
         this.participantes = participantes;
     }
 
+    @Override
+    public String toString() {
+        String value = "Nome do grupo: " + this.getNome() + "\nData do sorteio: " + this.getDataSorteio() +
+                "\nParticipantes: \n";
+        for (Pessoa pessoa : this.getParticipantes()) {
+            value += pessoa.getApelido() + "\n";
+        }
+
+        return value;
+    }
+
 }

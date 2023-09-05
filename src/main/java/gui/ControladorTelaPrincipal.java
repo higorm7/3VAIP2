@@ -8,7 +8,8 @@ public class ControladorTelaPrincipal {
 
     @FXML
     void buttonGruposOnClick(ActionEvent event) {
-
+        ScreenManager.getInstance().changeScreen(ScreenManager.getInstance().getTelaGruposScene(),
+                "Grupos");
     }
 
     @FXML
