@@ -9,13 +9,13 @@ public class Grupo {
     private String nome;
     private LocalDate dataSorteio;
     private List<Pessoa> participantes;
-
-    //adicionar lista de amigos secretos
+    private List<AmigosSecretos> amigosSecretos;
 
     public Grupo(String nome, LocalDate dataSorteio) {
         this.nome = nome;
         this.dataSorteio = dataSorteio;
         this.participantes = new ArrayList<>(0);
+        this.amigosSecretos = new ArrayList<>(0);
     }
 
     public String getNome() {
@@ -30,8 +30,12 @@ public class Grupo {
         return participantes;
     }
 
-    public void setParticipantes(List<Pessoa> participantes) {
-        this.participantes = participantes;
+    public List<AmigosSecretos> getAmigosSecretos() {
+        return amigosSecretos;
+    }
+
+    public void setAmigosSecretos(List<AmigosSecretos> amigosSecretos) {
+        this.amigosSecretos = amigosSecretos;
     }
 
     @Override

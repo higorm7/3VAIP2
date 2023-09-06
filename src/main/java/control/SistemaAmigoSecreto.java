@@ -3,13 +3,14 @@ package control;
 import control.controllers.ControladorGrupo;
 import control.controllers.ControladorPessoa;
 import control.controllers.ControladorPresente;
+import control.models.AmigosSecretos;
 import control.models.Grupo;
 import control.models.Pessoa;
 import control.models.Presente;
-import exceptions.ApelidoJaCadastradoException;
-import exceptions.NomeDeGrupoJaCadastradoException;
-import exceptions.PresenteJaCadastradoException;
+import exceptions.*;
 
+import java.security.SecureRandom;
+import java.util.ArrayList;
 import java.util.List;
 
 public class SistemaAmigoSecreto {
@@ -60,6 +61,37 @@ public class SistemaAmigoSecreto {
 
     public Grupo obterGrupoDeNome(String nome) {
         return this.controladorGrupo.getGrupoDeNome(nome);
+    }
+
+    public void sortear(Grupo grupo) throws GrupoJaSorteadoException, GrupoNaoContemPessoasSuficientesException {
+        if (grupo.getParticipantes().size() <= 2) {
+            throw new GrupoNaoContemPessoasSuficientesException(grupo);
+        }
+
+        if (grupo.getAmigosSecretos().isEmpty()) {
+            SecureRandom secureRandom = new SecureRandom();
+            List<Pessoa> pessoasDoGrupo = new ArrayList<>(grupo.getParticipantes());
+            List<AmigosSecretos> amigosSecretos = new ArrayList<>();
+            Pessoa presenteadora = pessoasDoGrupo.get(secureRandom.nextInt(pessoasDoGrupo.size()));
+            pessoasDoGrupo.remove(presenteadora);
+            Pessoa presenteada = null;
+
+            while (!pessoasDoGrupo.isEmpty()) {
+                presenteada = pessoasDoGrupo.get(secureRandom.nextInt(pessoasDoGrupo.size()));
+                pessoasDoGrupo.remove(presenteada);
+
+                AmigosSecretos amigos = new AmigosSecretos(presenteadora, presenteada);
+                amigosSecretos.add(amigos);
+                presenteadora = presenteada;
+                pessoasDoGrupo.remove(presenteadora);
+            }
+
+            amigosSecretos.add(new AmigosSecretos(presenteada, amigosSecretos.get(0).getPresenteador()));
+
+            grupo.setAmigosSecretos(amigosSecretos);
+        } else {
+            throw new GrupoJaSorteadoException(grupo);
+        }
     }
 
 }

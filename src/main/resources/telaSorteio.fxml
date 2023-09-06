@@ -2,17 +2,18 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ControladorTelaPresentes">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ControladorTelaSorteio">
    <children>
-      <AnchorPane layoutX="7.0" layoutY="6.0" prefHeight="400.0" prefWidth="600.0">
+      <AnchorPane layoutX="8.0" layoutY="8.0" prefHeight="400.0" prefWidth="600.0">
          <children>
             <VBox alignment="TOP_CENTER" prefHeight="400.0" prefWidth="133.0" spacing="5.0">
                <children>
@@ -45,31 +46,29 @@
                <children>
                   <TabPane prefHeight="388.0" prefWidth="456.0" tabClosingPolicy="UNAVAILABLE">
                      <tabs>
-                        <Tab text="Cadastro de presentes">
+                        <Tab text="Realizaçao de sorteio">
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
-                                    <VBox alignment="TOP_RIGHT" layoutX="14.0" layoutY="54.0" prefHeight="90.0" prefWidth="134.0" spacing="30.0">
-                                       <children>
-                                          <Label text="Categoria:">
-                                             <VBox.margin>
-                                                <Insets top="2.0" />
-                                             </VBox.margin>
-                                          </Label>
-                                          <Label text="Descriçao:" />
-                                          <Label text="Preço:" />
-                                       </children>
-                                    </VBox>
-                                    <VBox layoutX="228.0" layoutY="54.0" prefHeight="200.0" prefWidth="100.0" />
-                                    <VBox alignment="TOP_RIGHT" layoutX="160.0" layoutY="54.0" prefHeight="112.0" prefWidth="180.0" spacing="20.0">
-                                       <children>
-                                          <TextField fx:id="tfCategoria" />
-                                          <TextField fx:id="tfDescricao" />
-                                          <TextField fx:id="tfPreco" />
-                                       </children>
-                                    </VBox>
-                                    <Button layoutX="290.0" layoutY="309.0" mnemonicParsing="false" onAction="#buttonCancelarOnClick" text="Cancelar" />
-                                    <Button layoutX="380.0" layoutY="309.0" mnemonicParsing="false" onAction="#buttonSalvarOnClick" text="Salvar" />
+                                    <Label layoutX="104.0" layoutY="34.0" text="Grupo:" />
+                                    <ChoiceBox fx:id="cbGrupoSorteio" layoutX="151.0" layoutY="30.0" prefWidth="150.0" />
+                                    <Button layoutX="163.0" layoutY="102.0" mnemonicParsing="false" onAction="#buttonRealizarSorteioOn" prefHeight="71.0" prefWidth="126.0" text="Realizar sorteio" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab text="Pessoas em grupos">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <VBox layoutX="271.0" layoutY="67.0" prefHeight="200.0" prefWidth="170.0" />
+                                    <Label layoutX="113.0" layoutY="26.0" text="Grupo:" />
+                                    <ChoiceBox fx:id="cbGrupo" layoutX="166.0" layoutY="22.0" prefWidth="150.0" />
+                                    <Label layoutX="110.0" layoutY="59.0" text="Pessoa:" />
+                                    <ChoiceBox fx:id="cbPessoa" layoutX="166.0" layoutY="55.0" prefWidth="150.0" />
+                                    <Label layoutX="63.0" layoutY="159.0" text="Senha pessoal:" />
+                                    <PasswordField fx:id="pfSenha" layoutX="166.0" layoutY="155.0" />
+                                    <Button layoutX="162.0" layoutY="195.0" mnemonicParsing="false" onAction="#buttonConsultarOn" text="Consultar amigo secreto" />
                                  </children>
                               </AnchorPane>
                            </content>

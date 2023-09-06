@@ -12,6 +12,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import view.ScreenManager;
 
+import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -84,13 +85,19 @@ public class ControladorTelaGrupos {
                 showErrorAlert("Erro: nome de grupo já existe", e.getMessage(), "Tente outro nome");
                 this.tfNome.setText("");
                 this.tfNome.requestFocus();
+            } catch (DateTimeParseException e) {
+                showErrorAlert("Erro: data inválida", "Selecione uma data de sorteio adequada",
+                        "Tente novammente");
+                this.dpData.setValue(null);
+                this.dpData.requestFocus();
             }
         }
     }
 
     @FXML
     void buttonSorteioOnClick(ActionEvent event) {
-
+        this.clearFields();
+        ScreenManager.getInstance().changeScreen(ScreenManager.getInstance().getTelaSorteioScene(), "Sorteio");
     }
 
     @FXML

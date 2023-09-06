@@ -27,7 +27,9 @@ public class ControladorTelaPrincipal {
 
     @FXML
     void buttonSorteioOnClick(ActionEvent event) {
-
+        ScreenManager.getInstance().changeScreen(ScreenManager.getInstance().getTelaSorteioScene(),
+                "Sorteio");
+        ScreenManager.getInstance().getControladorTelaSorteio().initialize();
     }
 
 }

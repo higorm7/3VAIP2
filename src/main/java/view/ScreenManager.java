@@ -1,9 +1,6 @@
 package view;
 
-import gui.ControladorTelaGrupos;
-import gui.ControladorTelaPessoas;
-import gui.ControladorTelaPresentes;
-import gui.ControladorTelaPrincipal;
+import gui.*;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.TabPane;
@@ -28,6 +25,9 @@ public class ScreenManager {
 
     private Scene telaPresentesScene;
     private ControladorTelaPresentes controladorTelaPresentes;
+
+    private Scene telaSorteioScene;
+    private ControladorTelaSorteio controladorTelaSorteio;
 
     private static ScreenManager instance;
 
@@ -75,6 +75,14 @@ public class ScreenManager {
         return controladorTelaPresentes;
     }
 
+    public Scene getTelaSorteioScene() {
+        return telaSorteioScene;
+    }
+
+    public ControladorTelaSorteio getControladorTelaSorteio() {
+        return controladorTelaSorteio;
+    }
+
     public Stage getPrimaryStage() {
         return primaryStage;
     }
@@ -109,6 +117,12 @@ public class ScreenManager {
                     .getResource("/telaPresentes.fxml")).openStream());
             this.telaPresentesScene = new Scene(telaPresentesPane);
             this.controladorTelaPresentes = fxmlLoader.getController();
+
+            fxmlLoader = new FXMLLoader();
+            AnchorPane telaSorteioPane = fxmlLoader.load(Objects.requireNonNull(getClass()
+                    .getResource("/telaSorteio.fxml")).openStream());
+            this.telaSorteioScene = new Scene(telaSorteioPane);
+            this.controladorTelaSorteio = fxmlLoader.getController();
         } catch (IOException e) {
             e.printStackTrace();
         }

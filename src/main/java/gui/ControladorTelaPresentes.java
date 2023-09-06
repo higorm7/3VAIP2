@@ -75,7 +75,8 @@ public class ControladorTelaPresentes {
 
     @FXML
     void buttonSorteioOnClick(ActionEvent event) {
-
+        clearFields();
+        ScreenManager.getInstance().changeScreen(ScreenManager.getInstance().getTelaSorteioScene(), "Sorteio");
     }
 
     private boolean camposEstaoVazios() {
