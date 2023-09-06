@@ -66,6 +66,7 @@ public class ControladorTelaPessoas {
     @FXML
     void buttonSorteioOnClick(ActionEvent event) {
         this.clearFields();
+        ScreenManager.getInstance().getControladorTelaSorteio().initialize();
         ScreenManager.getInstance().changeScreen(ScreenManager.getInstance().getTelaSorteioScene(), "Sorteio");
     }
 

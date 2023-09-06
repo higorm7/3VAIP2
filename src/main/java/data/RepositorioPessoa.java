@@ -14,11 +14,12 @@ public class RepositorioPessoa implements IRepositorioPessoa {
 
     private RepositorioPessoa() {
         this.pessoas = new ArrayList<>(0);
-        pessoas.add(new Pessoa("a", "a", "a"));
-        pessoas.add(new Pessoa("a", "b", "a"));
-        pessoas.add(new Pessoa("a", "c", "a"));
-        pessoas.add(new Pessoa("a", "d", "a"));
-
+        pessoas.add(new Pessoa("a", "raluca granola", "a"));
+        pessoas.add(new Pessoa("a", "ze da manga", "a"));
+        pessoas.add(new Pessoa("a", "galega", "a"));
+        pessoas.add(new Pessoa("a", "princesa", "a"));
+        pessoas.add(new Pessoa("a", "pisca pisca", "a"));
+        pessoas.add(new Pessoa("a", "jean wyllis", "a"));
     }
 
     public static IRepositorioPessoa getInstance() {

@@ -4,6 +4,7 @@ import control.models.Grupo;
 import control.models.Pessoa;
 import exceptions.NomeDeGrupoJaCadastradoException;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +15,8 @@ public class RepositorioGrupo implements IRepositorioGrupo {
 
     private RepositorioGrupo() {
         this.grupos = new ArrayList<>(0);
+        this.grupos.add(new Grupo("grupo dos crias", LocalDate.now()));
+        this.grupos.add(new Grupo("ruralinos", LocalDate.now()));
     }
 
     public static IRepositorioGrupo getInstance() {

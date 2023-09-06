@@ -97,15 +97,12 @@ public class ControladorTelaGrupos {
     @FXML
     void buttonSorteioOnClick(ActionEvent event) {
         this.clearFields();
+        ScreenManager.getInstance().getControladorTelaSorteio().initialize();
         ScreenManager.getInstance().changeScreen(ScreenManager.getInstance().getTelaSorteioScene(), "Sorteio");
     }
 
     @FXML
     void buttonCancelarPessoasOnAction(ActionEvent event) {
-
-    }
-    @FXML
-    void buttonSalvarPessoasOnAction(ActionEvent event) {
 
     }
 

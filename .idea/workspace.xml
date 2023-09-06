@@ -4,22 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2e48b10-8c3c-49ad-a11d-226a3cd07395" name="Changes" comment="Adição de pessoas a grupos funcional.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/control/models/AmigosSecretos.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exceptions/GrupoJaSorteadoException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exceptions/GrupoNaoContemPessoasSuficientesException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gui/ControladorTelaSorteio.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/telaSorteio.fxml" afterDir="false" />
+    <list default="true" id="e2e48b10-8c3c-49ad-a11d-226a3cd07395" name="Changes" comment="Sorteio funcional">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/control/SistemaAmigoSecreto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/SistemaAmigoSecreto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/control/models/Grupo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/models/Grupo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/RepositorioGrupo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/RepositorioGrupo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/data/RepositorioPessoa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/RepositorioPessoa.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gui/ControladorTelaGrupos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/ControladorTelaGrupos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gui/ControladorTelaPessoas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/ControladorTelaPessoas.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gui/ControladorTelaPresentes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/ControladorTelaPresentes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gui/ControladorTelaPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/ControladorTelaPrincipal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/ScreenManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/ScreenManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/telaPresentes.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/telaPresentes.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/ControladorTelaSorteio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/ControladorTelaSorteio.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +75,7 @@
       <workItem from="1693604542454" duration="5079000" />
       <workItem from="1693655649592" duration="4569000" />
       <workItem from="1693932433774" duration="11614000" />
-      <workItem from="1694025435757" duration="10104000" />
+      <workItem from="1694025435757" duration="11610000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -156,7 +149,15 @@
       <option name="project" value="LOCAL" />
       <updated>1694029832374</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Sorteio funcional">
+      <option name="closed" value="true" />
+      <created>1694037162263</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1694037162263</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,6 +173,7 @@
     <MESSAGE value="Adicionada a tela de presentes. Cadastro funcionando adequadamente. Incluída exceção caso já exista um presente com a mesma descrição." />
     <MESSAGE value="Atualização de telas" />
     <MESSAGE value="Adição de pessoas a grupos funcional." />
-    <option name="LAST_COMMIT_MESSAGE" value="Adição de pessoas a grupos funcional." />
+    <MESSAGE value="Sorteio funcional" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sorteio funcional" />
   </component>
 </project>

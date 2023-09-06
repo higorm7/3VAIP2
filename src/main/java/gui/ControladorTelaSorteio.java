@@ -10,7 +10,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.PasswordField;
-import javafx.scene.control.Tab;
 import view.ScreenManager;
 
 import java.util.ArrayList;
@@ -52,22 +51,27 @@ public class ControladorTelaSorteio {
 
     @FXML
     void buttonRealizarSorteioOn(ActionEvent event) {
-        try {
-            SistemaAmigoSecreto.getInstance().sortear(SistemaAmigoSecreto.getInstance().
-                    obterGrupoDeNome(cbGrupoSorteio.getValue()));
-            System.out.println("O resultado do sorteio é: ");
-            for (AmigosSecretos amigos : SistemaAmigoSecreto.getInstance().
-                    obterGrupoDeNome(cbGrupoSorteio.getValue()).getAmigosSecretos()) {
-                System.out.println(amigos);
-            }
+        if (cbGrupoSorteio.getValue() != null) {
+            try {
+                SistemaAmigoSecreto.getInstance().sortear(SistemaAmigoSecreto.getInstance().
+                        obterGrupoDeNome(cbGrupoSorteio.getValue()));
+                System.out.println("O resultado do sorteio é: ");
+                for (AmigosSecretos amigos : SistemaAmigoSecreto.getInstance().
+                        obterGrupoDeNome(cbGrupoSorteio.getValue()).getAmigosSecretos()) {
+                    System.out.println(amigos);
+                }
 
-            showInfoAlert("Sorteio realizado", "O sorteio foi realizado com sucesso",
-                    "Consulte o seu amigo secreto ao lado");
-        } catch (GrupoJaSorteadoException e) {
-            showErrorAlert("Erro: grupo já foi sorteado", e.getMessage(), "Tente outro grupo");
-        } catch (GrupoNaoContemPessoasSuficientesException e) {
-            showErrorAlert("Erro: pessoas insuficientes", e.getMessage(),
-                    "Tente novamente quando cadastrar mais pessoas");
+                showInfoAlert("Sorteio realizado", "O sorteio foi realizado com sucesso",
+                        "Consulte o seu amigo secreto ao lado");
+            } catch (GrupoJaSorteadoException e) {
+                showErrorAlert("Erro: grupo já foi sorteado", e.getMessage(), "Tente outro grupo");
+            } catch (GrupoNaoContemPessoasSuficientesException e) {
+                showErrorAlert("Erro: pessoas insuficientes", e.getMessage(),
+                        "Tente novamente quando cadastrar mais pessoas");
+            }
+        } else {
+            showErrorAlert("Erro: selecione um grupo", "Selecione um grupo para sortear",
+                    "Tente novamente");
         }
     }
 
