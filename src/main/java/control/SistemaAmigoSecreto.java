@@ -58,4 +58,8 @@ public class SistemaAmigoSecreto {
         this.controladorPresente.cadastrarPresente(presente);
     }
 
+    public Grupo obterGrupoDeNome(String nome) {
+        return this.controladorGrupo.getGrupoDeNome(nome);
+    }
+
 }

@@ -10,8 +10,6 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.MouseEvent;
 import view.ScreenManager;
 
 import java.util.ArrayList;
@@ -105,8 +103,59 @@ public class ControladorTelaGrupos {
     }
 
     @FXML
-    void buttonPesquisarOnClick(ActionEvent event) {
+    void buttonAddOnClick(ActionEvent event) {
+        if (tvTodasPessoas.getSelectionModel().getSelectedItem() == null) {
+            showErrorAlert("Erro: nenhuma pessoa selecionada", "Escolha pessoas para adicionar ao grupo",
+                    "Tente novamente clicando na tabela.");
+            tvTodasPessoas.requestFocus();
+        } else if (cbGrupo.getValue() == null) {
+            showErrorAlert("Erro: nenhum grupo selecionado", "Escolha um grupo para adicionar as pessoas",
+                    "Tente novamente");
+        } else {
+            Grupo grupo = SistemaAmigoSecreto.getInstance().obterGrupoDeNome(cbGrupo.getValue());
+            grupo.getParticipantes().add(tvTodasPessoas.getSelectionModel().getSelectedItem());
+            List<Pessoa> pessoasTotal = new ArrayList<>(SistemaAmigoSecreto.getInstance().obterPessoas());
+            pessoasTotal.removeIf(pessoa -> grupo.getParticipantes().contains(pessoa));
 
+            configurarTv(pessoasTotal, tvTodasPessoas);
+            configurarTv(grupo.getParticipantes(), tvPessoasGrupo);
+        }
+    }
+
+    @FXML
+    void buttonDelOnClick(ActionEvent event) {
+        if (tvPessoasGrupo.getSelectionModel().getSelectedItem() == null) {
+            showErrorAlert("Erro: nenhuma pessoa selecionada", "Escolha pessoas para remover do grupo",
+                    "Tente novamente clicando na tabela de pessoas no grupo.");
+            tvPessoasGrupo.requestFocus();
+        } else if (cbGrupo.getValue() == null) {
+            showErrorAlert("Erro: nenhum grupo selecionado", "Escolha um grupo para remover as pessoas",
+                    "Tente novamente");
+        } else {
+            Grupo grupo = SistemaAmigoSecreto.getInstance().obterGrupoDeNome(cbGrupo.getValue());
+            grupo.getParticipantes().remove(tvPessoasGrupo.getSelectionModel().getSelectedItem());
+            List<Pessoa> pessoasTotal = new ArrayList<>(SistemaAmigoSecreto.getInstance().obterPessoas());
+            pessoasTotal.removeIf(pessoa -> grupo.getParticipantes().contains(pessoa));
+
+            configurarTv(pessoasTotal, tvTodasPessoas);
+            configurarTv(grupo.getParticipantes(), tvPessoasGrupo);
+        }
+    }
+
+    @FXML
+    void buttonPesquisarOnClick(ActionEvent event) {
+        if (cbGrupo.getValue() == null) {
+            showErrorAlert("Erro: nenhum grupo escolhido", "Escolha um grupo para pesquisar",
+                    "Tente novamente");
+            cbGrupo.requestFocus();
+        } else {
+            Grupo grupo = SistemaAmigoSecreto.getInstance().obterGrupoDeNome(cbGrupo.getValue());
+            List<Pessoa> pessoasTotal = new ArrayList<>(SistemaAmigoSecreto.getInstance().obterPessoas());
+            pessoasTotal.removeIf(pessoa -> grupo.getParticipantes().contains(pessoa));
+
+            configurarTv(grupo.getParticipantes(), tvPessoasGrupo);
+            configurarTv(pessoasTotal, this.tvTodasPessoas);
+        }
     }
 
     private boolean camposEstaoVazios() {
@@ -138,6 +187,7 @@ public class ControladorTelaGrupos {
 
     public void initialize() {
         tvColTodasPessoas.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getApelido()));
+        tvColPessoasGrupo.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getApelido()));
     }
 
     private void configurarTv(List<Pessoa> pessoas, TableView<Pessoa> tableView) {

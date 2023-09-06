@@ -79,7 +79,7 @@
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
-                                    <VBox layoutX="28.0" layoutY="67.0" prefHeight="200.0" prefWidth="170.0">
+                                    <VBox layoutX="14.0" layoutY="67.0" prefHeight="200.0" prefWidth="170.0">
                                        <children>
                                           <TableView fx:id="tvTodasPessoas" prefHeight="200.0" prefWidth="150.0">
                                             <columns>
@@ -105,9 +105,10 @@
                                     </VBox>
                                     <Label layoutX="113.0" layoutY="26.0" text="Grupo:" />
                                     <ChoiceBox fx:id="cbGrupo" layoutX="166.0" layoutY="22.0" prefWidth="150.0" />
-                                    <Button layoutX="380.0" layoutY="309.0" mnemonicParsing="false" onAction="#buttonSalvarPessoasOnAction" text="Salvar" />
-                                    <Button layoutX="288.0" layoutY="309.0" mnemonicParsing="false" onAction="#buttonCancelarPessoasOnAction" text="Cancelar" />
+                                    <Button layoutX="351.0" layoutY="309.0" mnemonicParsing="false" onAction="#buttonCancelarPessoasOnAction" text="Cancelar" />
                                     <Button layoutX="349.0" layoutY="22.0" mnemonicParsing="false" onAction="#buttonPesquisarOnClick" text="Pesquisar" />
+                                    <Button layoutX="204.0" layoutY="100.0" mnemonicParsing="false" onAction="#buttonAddOnClick" text="ADD" />
+                                    <Button layoutX="206.0" layoutY="155.0" mnemonicParsing="false" onAction="#buttonDelOnClick" text="DEL" />
                                  </children></AnchorPane>
                            </content>
                         </Tab>

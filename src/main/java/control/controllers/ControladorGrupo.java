@@ -40,4 +40,9 @@ public class ControladorGrupo {
             this.repositorioGrupo.adicionarPessoaAoGrupo(pessoa, grupo);
         }
     }
+
+    public Grupo getGrupoDeNome(String nome) {
+        return this.repositorioGrupo.getGrupoDeNome(nome);
+    }
+
 }

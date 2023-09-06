@@ -2,7 +2,9 @@ package gui;
 
 import control.SistemaAmigoSecreto;
 import control.models.Pessoa;
+import control.models.Presente;
 import exceptions.ApelidoJaCadastradoException;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -11,7 +13,7 @@ import view.ScreenManager;
 public class ControladorTelaPessoas {
 
     @FXML
-    private ChoiceBox<?> cbPessoa;
+    private ChoiceBox<String> cbPessoa;
 
     @FXML
     private PasswordField pfSenha;
@@ -23,17 +25,21 @@ public class ControladorTelaPessoas {
     private TextField tfNome;
 
     @FXML
-    private TableColumn<?, ?> tvColPresentesPessoa;
+    private TableColumn<Pessoa, String> tvColPresentesPessoa;
 
     @FXML
-    private TableColumn<?, ?> tvColTodosPresentes;
+    private TableColumn<Presente, String> tvColTodosPresentes;
 
     @FXML
-    private TableView<?> tvPresentesPessoa;
+    private TableView<Pessoa> tvPresentesPessoa;
 
     @FXML
-    private TableView<?> tvTodosPresentes;
+    private TableView<Presente> tvTodosPresentes;
 
+    @FXML
+    void buttonPesquisarOnClick(ActionEvent event) {
+
+    }
 
     @FXML
     void buttonGruposOnClick(ActionEvent event) {
@@ -88,6 +94,11 @@ public class ControladorTelaPessoas {
         this.clearFields();
         ScreenManager.getInstance().changeScreen(ScreenManager.getInstance().getTelaPrincipalScene(),
                 "Amigos secretos");
+    }
+
+    public void initialize() {
+        tvColTodosPresentes.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getDescricao()));
+        //tvColPresentesPessoa.setCellValueFactory(cellData -> new SimpleStringProperty(presente -> cellData.getValue().getPresentesDesejados()));
     }
 
     private boolean camposEstaoVazios() {

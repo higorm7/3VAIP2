@@ -46,6 +46,17 @@ public class RepositorioGrupo implements IRepositorioGrupo {
         grupo.getParticipantes().add(pessoa);
     }
 
+    @Override
+    public Grupo getGrupoDeNome(String nome) {
+        for (Grupo grupo : grupos) {
+            if (nome.equals(grupo.getNome())) {
+                return grupo;
+            }
+        }
+
+        return null;
+    }
+
     private boolean existeGrupoCadastradoComONome(String nome) {
         for (Grupo grupo : this.grupos) {
             if (nome.equals(grupo.getNome())) {

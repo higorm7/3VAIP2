@@ -14,4 +14,6 @@ public interface IRepositorioGrupo {
 
     void adicionarPessoaAoGrupo(Pessoa pessoa, Grupo grupo);
 
+    Grupo getGrupoDeNome(String nome);
+
 }
