@@ -1,5 +1,6 @@
 package control.controllers;
 
+import control.models.Pessoa;
 import control.models.Presente;
 import data.IRepositorioPresente;
 import data.RepositorioPresente;
@@ -30,6 +31,10 @@ public class ControladorPresente {
 
     public void cadastrarPresente(Presente presente) throws PresenteJaCadastradoException {
         this.repositorioPresente.cadastrarPresente(presente);
+    }
+
+    public void adicionarPresenteNaListaDe(Pessoa pessoa, Presente presente) {
+        this.repositorioPresente.adicionarPresenteNaListaDe(pessoa, presente);
     }
 
 }

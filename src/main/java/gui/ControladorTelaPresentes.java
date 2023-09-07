@@ -30,6 +30,7 @@ public class ControladorTelaPresentes {
     @FXML
     void buttonGruposOnClick(ActionEvent event) {
         this.clearFields();
+        ScreenManager.getInstance().getControladorTelaGrupos().atualizarApresentacao();
         ScreenManager.getInstance().changeScreen(ScreenManager.getInstance().getTelaGruposScene(),
                 "Grupos");
     }
@@ -37,6 +38,7 @@ public class ControladorTelaPresentes {
     @FXML
     void buttonPessoasOnClick(ActionEvent event) {
         this.clearFields();
+        ScreenManager.getInstance().getControladorTelaPessoas().atualizarApresentacao();
         ScreenManager.getInstance().changeScreen(ScreenManager.getInstance().getTelaPessoasScene(),
                 "Pessoas");
     }

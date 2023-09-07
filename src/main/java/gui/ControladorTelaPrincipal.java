@@ -15,12 +15,14 @@ public class ControladorTelaPrincipal {
 
     @FXML
     void buttonPessoasOnClick(ActionEvent event) {
+        ScreenManager.getInstance().getControladorTelaPessoas().atualizarApresentacao();
         ScreenManager.getInstance().changeScreen(ScreenManager.getInstance().getTelaPessoasScene(),
                 "Pessoas");
     }
 
     @FXML
     void buttonPresentesOnClick(ActionEvent event) {
+        ScreenManager.getInstance().getControladorTelaPessoas().atualizarApresentacao();
         ScreenManager.getInstance().changeScreen(ScreenManager.getInstance().getTelaPresentesScene(),
                 "Presentes");
     }

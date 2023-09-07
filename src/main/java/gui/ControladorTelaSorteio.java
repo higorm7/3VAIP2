@@ -4,10 +4,7 @@ import control.SistemaAmigoSecreto;
 import control.models.AmigosSecretos;
 import control.models.Grupo;
 import control.models.Pessoa;
-import exceptions.GrupoJaSorteadoException;
-import exceptions.GrupoNaoContemPessoasSuficientesException;
-import exceptions.GrupoNaoFoiSorteadoException;
-import exceptions.SenhaIncorretaException;
+import exceptions.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -97,6 +94,9 @@ public class ControladorTelaSorteio {
             } catch (GrupoNaoContemPessoasSuficientesException e) {
                 showErrorAlert("Erro: pessoas insuficientes", e.getMessage(),
                         "Tente novamente quando cadastrar mais pessoas");
+            } catch (DataDeSorteioFuturaException e) {
+                showErrorAlert("Erro: não é possível antecipar sorteios", e.getMessage(),
+                        "Tente outra vez a partir do dia " + e.getGrupo().getDataSorteio().toString());
             }
         } else {
             showErrorAlert("Erro: selecione um grupo", "Selecione um grupo para sortear",

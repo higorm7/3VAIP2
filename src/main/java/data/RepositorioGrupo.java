@@ -48,7 +48,9 @@ public class RepositorioGrupo implements IRepositorioGrupo {
 
     @Override
     public void adicionarPessoaAoGrupo(Pessoa pessoa, Grupo grupo) {
-        grupo.getParticipantes().add(pessoa);
+        if (!pessoaJaEstaCadastrada(pessoa, grupo)) {
+            grupo.getParticipantes().add(pessoa);
+        }
     }
 
     @Override
@@ -80,6 +82,16 @@ public class RepositorioGrupo implements IRepositorioGrupo {
     private boolean existeGrupoCadastradoComONome(String nome) {
         for (Grupo grupo : this.grupos) {
             if (nome.equals(grupo.getNome())) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private boolean pessoaJaEstaCadastrada(Pessoa pessoa, Grupo grupo) {
+        for (Pessoa pessoaDoGrupo : grupo.getParticipantes()) {
+            if (pessoa.getApelido().equals(pessoaDoGrupo.getApelido())) {
                 return true;
             }
         }

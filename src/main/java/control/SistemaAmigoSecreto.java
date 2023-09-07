@@ -10,6 +10,7 @@ import control.models.Presente;
 import exceptions.*;
 
 import java.security.SecureRandom;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -67,9 +68,14 @@ public class SistemaAmigoSecreto {
         return this.controladorPessoa.getPessoaDeApelido(apelido);
     }
 
-    public void sortear(Grupo grupo) throws GrupoJaSorteadoException, GrupoNaoContemPessoasSuficientesException {
+    public void sortear(Grupo grupo) throws GrupoJaSorteadoException, GrupoNaoContemPessoasSuficientesException,
+            DataDeSorteioFuturaException {
         if (grupo.getParticipantes().size() <= 2) {
             throw new GrupoNaoContemPessoasSuficientesException(grupo);
+        }
+
+        if (grupo.getDataSorteio().isAfter(LocalDate.now())) {
+            throw new DataDeSorteioFuturaException(grupo);
         }
 
         if (grupo.getAmigosSecretos().isEmpty()) {
@@ -108,6 +114,14 @@ public class SistemaAmigoSecreto {
 
     public Pessoa obterAmigoSecretoDe(String apelido, Grupo grupo) throws GrupoNaoFoiSorteadoException {
         return this.controladorGrupo.obterAmigoSecretoDe(apelido, grupo);
+    }
+
+    public void adicionarPessoaAoGrupo(Pessoa pessoa, Grupo grupo) {
+        this.controladorGrupo.adicionarPessoaAoGrupo(pessoa, grupo);
+    }
+
+    public void adicionarPresenteNaListaDe(Pessoa pessoa, Presente presente) {
+        this.controladorPresente.adicionarPresenteNaListaDe(pessoa, presente);
     }
 
 }

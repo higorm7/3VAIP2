@@ -49,6 +49,7 @@ public class ControladorTelaGrupos {
     @FXML
     void buttonGruposOnClick(ActionEvent event) {
         clearFields();
+        ScreenManager.getInstance().getControladorTelaGrupos().atualizarApresentacao();
         ScreenManager.getInstance().changeScreen(ScreenManager.getInstance().getTelaPrincipalScene(),
                 "Amigos secretos");
     }
@@ -56,6 +57,7 @@ public class ControladorTelaGrupos {
     @FXML
     void buttonPessoasOnClick(ActionEvent event) {
         clearFields();
+        ScreenManager.getInstance().getControladorTelaPessoas().atualizarApresentacao();
         ScreenManager.getInstance().changeScreen(ScreenManager.getInstance().getTelaPessoasScene(),
                 "Pessoas");
     }
@@ -103,7 +105,9 @@ public class ControladorTelaGrupos {
 
     @FXML
     void buttonCancelarPessoasOnAction(ActionEvent event) {
-
+        clearFields();
+        ScreenManager.getInstance().changeScreen(ScreenManager.getInstance().getTelaPrincipalScene(),
+                "Amigos secretos");
     }
 
     @FXML
@@ -115,9 +119,15 @@ public class ControladorTelaGrupos {
         } else if (cbGrupo.getValue() == null) {
             showErrorAlert("Erro: nenhum grupo selecionado", "Escolha um grupo para adicionar as pessoas",
                     "Tente novamente");
+            cbGrupo.requestFocus();
+        } else if (!SistemaAmigoSecreto.getInstance().
+                obterGrupoDeNome(cbGrupo.getValue()).getAmigosSecretos().isEmpty()) {
+            showErrorAlert("Erro: grupo já foi sorteado", "Não é possível modificar o grupo",
+                    "Tente outro grupo");
         } else {
             Grupo grupo = SistemaAmigoSecreto.getInstance().obterGrupoDeNome(cbGrupo.getValue());
-            grupo.getParticipantes().add(tvTodasPessoas.getSelectionModel().getSelectedItem());
+            SistemaAmigoSecreto.getInstance().
+                    adicionarPessoaAoGrupo(tvTodasPessoas.getSelectionModel().getSelectedItem(), grupo);
             List<Pessoa> pessoasTotal = new ArrayList<>(SistemaAmigoSecreto.getInstance().obterPessoas());
             pessoasTotal.removeIf(pessoa -> grupo.getParticipantes().contains(pessoa));
 
@@ -135,6 +145,10 @@ public class ControladorTelaGrupos {
         } else if (cbGrupo.getValue() == null) {
             showErrorAlert("Erro: nenhum grupo selecionado", "Escolha um grupo para remover as pessoas",
                     "Tente novamente");
+        } else if (!SistemaAmigoSecreto.getInstance().
+                obterGrupoDeNome(cbGrupo.getValue()).getAmigosSecretos().isEmpty()) {
+            showErrorAlert("Erro: grupo já foi sorteado", "Não é possível modificar o grupo",
+                    "Tente outro grupo");
         } else {
             Grupo grupo = SistemaAmigoSecreto.getInstance().obterGrupoDeNome(cbGrupo.getValue());
             grupo.getParticipantes().remove(tvPessoasGrupo.getSelectionModel().getSelectedItem());
