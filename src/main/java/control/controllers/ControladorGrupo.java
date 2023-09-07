@@ -1,9 +1,11 @@
 package control.controllers;
 
+import control.models.AmigosSecretos;
 import control.models.Grupo;
 import control.models.Pessoa;
 import data.IRepositorioGrupo;
 import data.RepositorioGrupo;
+import exceptions.GrupoNaoFoiSorteadoException;
 import exceptions.NomeDeGrupoJaCadastradoException;
 
 import java.util.List;
@@ -43,6 +45,10 @@ public class ControladorGrupo {
 
     public Grupo getGrupoDeNome(String nome) {
         return this.repositorioGrupo.getGrupoDeNome(nome);
+    }
+
+    public Pessoa obterAmigoSecretoDe(String apelido, Grupo grupo) throws GrupoNaoFoiSorteadoException {
+        return this.repositorioGrupo.obterAmigoSecretoDe(apelido, grupo);
     }
 
 }

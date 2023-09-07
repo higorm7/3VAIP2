@@ -63,6 +63,10 @@ public class SistemaAmigoSecreto {
         return this.controladorGrupo.getGrupoDeNome(nome);
     }
 
+    public Pessoa obterPessoaDeApelido(String apelido) {
+        return this.controladorPessoa.getPessoaDeApelido(apelido);
+    }
+
     public void sortear(Grupo grupo) throws GrupoJaSorteadoException, GrupoNaoContemPessoasSuficientesException {
         if (grupo.getParticipantes().size() <= 2) {
             throw new GrupoNaoContemPessoasSuficientesException(grupo);
@@ -92,6 +96,18 @@ public class SistemaAmigoSecreto {
         } else {
             throw new GrupoJaSorteadoException(grupo);
         }
+    }
+
+    public boolean validarAcessoDe(Pessoa pessoa, String senha) throws SenhaIncorretaException {
+        if (senha.equals(pessoa.getSenha())) {
+            return true;
+        } else {
+            throw new SenhaIncorretaException(pessoa.getApelido());
+        }
+    }
+
+    public Pessoa obterAmigoSecretoDe(String apelido, Grupo grupo) throws GrupoNaoFoiSorteadoException {
+        return this.controladorGrupo.obterAmigoSecretoDe(apelido, grupo);
     }
 
 }

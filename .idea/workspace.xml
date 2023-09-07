@@ -4,15 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2e48b10-8c3c-49ad-a11d-226a3cd07395" name="Changes" comment="Sorteio funcional">
+    <list default="true" id="e2e48b10-8c3c-49ad-a11d-226a3cd07395" name="Changes" comment="Atualização da tela de sorteio">
+      <change afterPath="$PROJECT_DIR$/src/main/java/exceptions/GrupoNaoFoiSorteadoException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/exceptions/SenhaIncorretaException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/control/SistemaAmigoSecreto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/SistemaAmigoSecreto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/control/controllers/ControladorGrupo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/controllers/ControladorGrupo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/control/controllers/ControladorPessoa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/controllers/ControladorPessoa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/IRepositorioGrupo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/IRepositorioGrupo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/IRepositorioPessoa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/IRepositorioPessoa.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/data/RepositorioGrupo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/RepositorioGrupo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/data/RepositorioPessoa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/RepositorioPessoa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/ControladorTelaGrupos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/ControladorTelaGrupos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/ControladorTelaPessoas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/ControladorTelaPessoas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/ControladorTelaPresentes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/ControladorTelaPresentes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/ControladorTelaPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/ControladorTelaPrincipal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gui/ControladorTelaSorteio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/ControladorTelaSorteio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/telaSorteio.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/telaSorteio.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +79,8 @@
       <workItem from="1693604542454" duration="5079000" />
       <workItem from="1693655649592" duration="4569000" />
       <workItem from="1693932433774" duration="11614000" />
-      <workItem from="1694025435757" duration="11610000" />
+      <workItem from="1694025435757" duration="11891000" />
+      <workItem from="1694087037657" duration="2790000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -157,7 +162,15 @@
       <option name="project" value="LOCAL" />
       <updated>1694037162263</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Atualização da tela de sorteio">
+      <option name="closed" value="true" />
+      <created>1694038833535</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1694038833535</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -174,6 +187,7 @@
     <MESSAGE value="Atualização de telas" />
     <MESSAGE value="Adição de pessoas a grupos funcional." />
     <MESSAGE value="Sorteio funcional" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sorteio funcional" />
+    <MESSAGE value="Atualização da tela de sorteio" />
+    <option name="LAST_COMMIT_MESSAGE" value="Atualização da tela de sorteio" />
   </component>
 </project>

@@ -57,7 +57,7 @@
                               </AnchorPane>
                            </content>
                         </Tab>
-                        <Tab text="Pessoas em grupos">
+                        <Tab text="Consulta de amigo secreto">
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
@@ -65,7 +65,7 @@
                                     <Label layoutX="113.0" layoutY="26.0" text="Grupo:" />
                                     <ChoiceBox fx:id="cbGrupo" layoutX="166.0" layoutY="22.0" prefWidth="150.0" />
                                     <Label layoutX="110.0" layoutY="59.0" text="Pessoa:" />
-                                    <ChoiceBox fx:id="cbPessoa" layoutX="166.0" layoutY="55.0" prefWidth="150.0" />
+                                    <ChoiceBox fx:id="cbPessoa" layoutX="166.0" layoutY="55.0" onMousePressed="#cbPessoaOnMousePressed" prefWidth="150.0" />
                                     <Label layoutX="63.0" layoutY="159.0" text="Senha pessoal:" />
                                     <PasswordField fx:id="pfSenha" layoutX="166.0" layoutY="155.0" />
                                     <Button layoutX="162.0" layoutY="195.0" mnemonicParsing="false" onAction="#buttonConsultarOn" text="Consultar amigo secreto" />

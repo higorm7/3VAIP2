@@ -16,4 +16,6 @@ public interface IRepositorioPessoa {
 
     void removerPresenteDaListaDe(Pessoa pessoa, Presente presente);
 
+    Pessoa getPessoaDeApelido(String apelido);
+
 }

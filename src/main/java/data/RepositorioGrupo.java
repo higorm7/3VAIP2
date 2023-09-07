@@ -1,7 +1,9 @@
 package data;
 
+import control.models.AmigosSecretos;
 import control.models.Grupo;
 import control.models.Pessoa;
+import exceptions.GrupoNaoFoiSorteadoException;
 import exceptions.NomeDeGrupoJaCadastradoException;
 
 import java.time.LocalDate;
@@ -58,6 +60,21 @@ public class RepositorioGrupo implements IRepositorioGrupo {
         }
 
         return null;
+    }
+
+    @Override
+    public Pessoa obterAmigoSecretoDe(String apelido, Grupo grupo) throws GrupoNaoFoiSorteadoException {
+        if (grupo.getAmigosSecretos().isEmpty()) {
+            throw new GrupoNaoFoiSorteadoException(grupo);
+        } else {
+            for (AmigosSecretos amigos : grupo.getAmigosSecretos()) {
+                if (apelido.equals(amigos.getPresenteador().getApelido())) {
+                    return amigos.getPresenteado();
+                }
+            }
+
+            return null;
+        }
     }
 
     private boolean existeGrupoCadastradoComONome(String nome) {

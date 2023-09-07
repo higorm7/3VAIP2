@@ -34,4 +34,8 @@ public class ControladorPessoa {
         }
     }
 
+    public Pessoa getPessoaDeApelido(String apelido) {
+        return this.repositorioPessoa.getPessoaDeApelido(apelido);
+    }
+
 }

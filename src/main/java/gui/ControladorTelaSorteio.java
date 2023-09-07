@@ -3,13 +3,17 @@ package gui;
 import control.SistemaAmigoSecreto;
 import control.models.AmigosSecretos;
 import control.models.Grupo;
+import control.models.Pessoa;
 import exceptions.GrupoJaSorteadoException;
 import exceptions.GrupoNaoContemPessoasSuficientesException;
+import exceptions.GrupoNaoFoiSorteadoException;
+import exceptions.SenhaIncorretaException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.PasswordField;
+import javafx.scene.input.MouseEvent;
 import view.ScreenManager;
 
 import java.util.ArrayList;
@@ -31,21 +35,46 @@ public class ControladorTelaSorteio {
 
     @FXML
     void buttonConsultarOn(ActionEvent event) {
+        if (camposEstaoVazios()) {
+            showErrorAlert("Erro: campos vazios", "Preencha os campos adequadamente",
+                    "Tente novamente");
+            cbGrupo.requestFocus();
+        } else {
+            try {
+                Pessoa pessoa = SistemaAmigoSecreto.getInstance().obterPessoaDeApelido(cbPessoa.getValue());
 
+                if (SistemaAmigoSecreto.getInstance().validarAcessoDe(pessoa, pfSenha.getText())) {
+                    Pessoa amigoSecreto = SistemaAmigoSecreto.getInstance().obterAmigoSecretoDe(pessoa.getApelido(),
+                            SistemaAmigoSecreto.getInstance().obterGrupoDeNome(cbGrupo.getValue()));
+                    showInfoAlert("Acesso permitido", "O seu amigo secreto é " + amigoSecreto.getApelido(),
+                            "Obrigado por jogar");
+                    clearFields();
+                }
+            } catch (SenhaIncorretaException e) {
+                showErrorAlert("Erro: senha incorreta", e.getMessage(), "Tente novamente");
+                pfSenha.requestFocus();
+            } catch (GrupoNaoFoiSorteadoException e) {
+                showErrorAlert("Erro: grupo não sorteado", e.getMessage(), "Realize o sorteio do grupo");
+                clearFields();
+            }
+        }
     }
 
     @FXML
     void buttonGruposOnClick(ActionEvent event) {
+        clearFields();
         ScreenManager.getInstance().changeScreen(ScreenManager.getInstance().getTelaGruposScene(), "Grupos");
     }
 
     @FXML
     void buttonPessoasOnClick(ActionEvent event) {
+        clearFields();
         ScreenManager.getInstance().changeScreen(ScreenManager.getInstance().getTelaPessoasScene(), "Pessoas");
     }
 
     @FXML
     void buttonPresentesOnClick(ActionEvent event) {
+        clearFields();
         ScreenManager.getInstance().changeScreen(ScreenManager.getInstance().getTelaPresentesScene(), "Presentes");
     }
 
@@ -77,13 +106,30 @@ public class ControladorTelaSorteio {
 
     @FXML
     void buttonSorteioOnClick(ActionEvent event) {
+        clearFields();
         ScreenManager.getInstance().changeScreen(ScreenManager.getInstance().getTelaPrincipalScene(),
                 "Amigos secretos");
+    }
+
+    @FXML
+    void cbPessoaOnMousePressed(MouseEvent event) {
+        if (cbGrupo.getValue() == null) {
+            showErrorAlert("Erro: grupo vazio", "Selecione um grupo na caixa acima",
+                    "Tente novamente");
+            cbGrupo.requestFocus();
+        } else {
+            List<Pessoa> pessoasDoGrupo = new ArrayList<>(SistemaAmigoSecreto.getInstance().
+                    obterGrupoDeNome(cbGrupo.getValue()).getParticipantes());
+            for (Pessoa pessoa : pessoasDoGrupo) {
+                cbPessoa.getItems().add(pessoa.getApelido());
+            }
+        }
     }
 
     public void initialize() {
         cbGrupo.getItems().clear();
         cbGrupoSorteio.getItems().clear();
+        cbPessoa.getItems().clear();
 
         List<String> nomesGrupos = new ArrayList<>(0);
         for (Grupo grupo : SistemaAmigoSecreto.getInstance().obterGrupos()) {
@@ -110,6 +156,18 @@ public class ControladorTelaSorteio {
         alert.setHeaderText(header);
         alert.setContentText(message);
         alert.showAndWait();
+    }
+
+    private boolean camposEstaoVazios() {
+        return pfSenha.getText().isBlank() || cbPessoa.getValue() == null || cbPessoa.getValue() == null;
+    }
+
+    private void clearFields() {
+        this.cbGrupo.setValue(null);
+        this.cbPessoa.setValue(null);
+        this.pfSenha.setText("");
+
+        this.initialize();
     }
 
 }

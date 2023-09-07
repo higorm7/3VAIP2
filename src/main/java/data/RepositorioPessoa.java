@@ -57,6 +57,17 @@ public class RepositorioPessoa implements IRepositorioPessoa {
         pessoa.getPresentesDesejados().remove(presente);
     }
 
+    @Override
+    public Pessoa getPessoaDeApelido(String apelido) {
+        for (Pessoa pessoa : pessoas) {
+            if (apelido.equals(pessoa.getApelido())) {
+                return pessoa;
+            }
+        }
+
+        return null;
+    }
+
     private boolean existePessoaCadastradaComApelidoIgualA(String apelido) {
         for (Pessoa pessoa : this.pessoas) {
             if (apelido.equals(pessoa.getApelido())) {
