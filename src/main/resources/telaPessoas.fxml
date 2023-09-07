@@ -98,7 +98,7 @@
                                           <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                                        </columnResizePolicy>
                                     </TableView>
-                                    <Button layoutX="351.0" layoutY="309.0" mnemonicParsing="false" text="Cancelar" />
+                                    <Button layoutX="351.0" layoutY="309.0" mnemonicParsing="false" onAction="#buttonCancelarOnClick" text="Cancelar" />
                                     <Label layoutX="92.0" layoutY="34.0" text="Pessoa:" />
                                     <Button layoutX="318.0" layoutY="30.0" mnemonicParsing="false" onAction="#buttonPesquisarOnClick" text="Pesquisar" />
                                     <ChoiceBox fx:id="cbPessoa" layoutX="153.0" layoutY="30.0" prefWidth="150.0" />
