@@ -82,8 +82,8 @@ public class ControladorTelaSorteio {
                 SistemaAmigoSecreto.getInstance().sortear(SistemaAmigoSecreto.getInstance().
                         obterGrupoDeNome(cbGrupoSorteio.getValue()));
                 System.out.println("O resultado do sorteio é: ");
-                for (AmigosSecretos amigos : SistemaAmigoSecreto.getInstance().
-                        obterGrupoDeNome(cbGrupoSorteio.getValue()).getAmigosSecretos()) {
+                for (AmigosSecretos amigos : SistemaAmigoSecreto.getInstance().obterAmigosSecretosDoGrupo(
+                        SistemaAmigoSecreto.getInstance().obterGrupoDeNome(cbGrupoSorteio.getValue()))) {
                     System.out.println(amigos);
                 }
 

@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2e48b10-8c3c-49ad-a11d-226a3cd07395" name="Changes" comment="Presentes adicionados a cada usuário. Sorteios só podem ser realizados no dia ou depois do dia fornecido." />
+    <list default="true" id="e2e48b10-8c3c-49ad-a11d-226a3cd07395" name="Changes" comment="Finalizado o projeto.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -67,7 +69,9 @@
       <workItem from="1693655649592" duration="4569000" />
       <workItem from="1693932433774" duration="11614000" />
       <workItem from="1694025435757" duration="11891000" />
-      <workItem from="1694087037657" duration="10031000" />
+      <workItem from="1694087037657" duration="10130000" />
+      <workItem from="1694273367636" duration="868000" />
+      <workItem from="1694274803002" duration="383000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -173,7 +177,15 @@
       <option name="project" value="LOCAL" />
       <updated>1694100791836</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Finalizado o projeto.">
+      <option name="closed" value="true" />
+      <created>1694101148612</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1694101148612</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -193,6 +205,7 @@
     <MESSAGE value="Atualização da tela de sorteio" />
     <MESSAGE value="Readequação do sorteio. Consulta de amigos secretos agora é possível. Consulta funcionando adequadamente. Adicionadas exceções de grupo não sorteado e senha incorreta." />
     <MESSAGE value="Presentes adicionados a cada usuário. Sorteios só podem ser realizados no dia ou depois do dia fornecido." />
-    <option name="LAST_COMMIT_MESSAGE" value="Presentes adicionados a cada usuário. Sorteios só podem ser realizados no dia ou depois do dia fornecido." />
+    <MESSAGE value="Finalizado o projeto." />
+    <option name="LAST_COMMIT_MESSAGE" value="Finalizado o projeto." />
   </component>
 </project>

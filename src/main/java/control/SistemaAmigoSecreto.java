@@ -124,4 +124,8 @@ public class SistemaAmigoSecreto {
         this.controladorPresente.adicionarPresenteNaListaDe(pessoa, presente);
     }
 
+    public List<AmigosSecretos> obterAmigosSecretosDoGrupo(Grupo grupo) {
+        return this.controladorGrupo.obterAmigosSecretosDoGrupo(grupo);
+    }
+
 }

@@ -51,4 +51,8 @@ public class ControladorGrupo {
         return this.repositorioGrupo.obterAmigoSecretoDe(apelido, grupo);
     }
 
+    public List<AmigosSecretos> obterAmigosSecretosDoGrupo(Grupo grupo) {
+        return grupo.getAmigosSecretos();
+    }
+
 }
